@@ -1,0 +1,10 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; DB Configuration
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[database]
+host     = "XXXXXXX"
+username = "XXXXXXX"
+password = "XXXXXXX"
+name     = "XXXXXXX"
+prefix   = "omeka_"
