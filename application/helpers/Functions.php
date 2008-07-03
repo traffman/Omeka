@@ -912,7 +912,7 @@ function collection($id=null)
 
 function collections(array $params = array())
 {
-	return get_db()->getTable('Collection')->findBy($params);
+	return get_db()->getTable('Collection')->findAll();
 }
 
 function metafields(array $params = array())
