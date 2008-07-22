@@ -15,7 +15,7 @@
 		typeSelect.onchange = function() {
 			
 			var typeSelectLabel = $$('#type-select label')[0];
-			var image = document.createElement('img');
+			var image = $(document.createElement('img'));
 			image.src = "<?php echo img('loader2.gif'); ?>";
 			var params = 'item_id=<?php echo $item->id; ?>&type_id='+this.getValue();
 						
