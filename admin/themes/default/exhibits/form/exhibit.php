@@ -102,7 +102,7 @@
 	{		
 		$('new-section').update();
 		$('add_new_section').show();
-		
+		return false;
 	}
 	
 	//This is a bit of a hack.  The exhibit ID is a hidden value on the form
