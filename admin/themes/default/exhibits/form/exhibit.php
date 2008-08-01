@@ -93,7 +93,7 @@
 				
 				//Update the section slug in case that is a cause of the error
 				$('section-slug').value = section['slug'];
-			},
+			}
 		})
 	}
 
@@ -224,7 +224,7 @@
 			<ol id="section-list">
 				<?php common('_section_list', compact('exhibit'), 'exhibits'); ?>
 			</ol>
-			<div id="new-section-link"><a href="javascript:void()" name="add_new_section" id="add_new_section">Add a Section</a></div>
+			<div id="new-section-link"><a href="#" name="add_new_section" id="add_new_section">Add a Section</a></div>
 			<div id="new-section"></div>
 			<input type="hidden" name="exhibit_id" id="exhibit_id" value="<?php echo h($exhibit->id); ?>" />
 		</div>
