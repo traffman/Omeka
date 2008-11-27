@@ -442,12 +442,16 @@ class File extends Omeka_Record {
 		$m = new FileMetaLookup;
 		
 		//If we can use the browser mime_type instead of the ID3 extrapolation, do that
-		$mime_type = $this->mime_browser;	
-
+		$mime_type = $this->mime_browser;
+		
+		//  Return if getid3 did not return a valid object.	
+		if (!$id3 = $this->retrieveID3Info($path)) {
+		    return;
+		}
+		
 		if($this->mimeTypeIsAmbiguous($mime_type)) {
 			//If we can't determine MIME type via the browser, 
 			//we will pull down ID3 data, but be warned that this may cause a memory error on large files
-			$id3 = $this->retrieveID3Info($path);
 			$mime_type = $id3->info['mime_type'];
 		}
 		
@@ -497,9 +501,13 @@ class File extends Omeka_Record {
 	 **/
 	private function retrieveID3Info($path)
 	{
+	    if (!extension_loaded('exif')) {
+	        return false;
+	    }
+	    
 		require_once LIB_DIR.DIRECTORY_SEPARATOR.'getid3/getid3.php';
-		//Instantiate this third-party sheit
-		$id3 = new getID3;
+		
+ 		$id3 = new getID3;
 		
 		$id3->encoding = 'UTF-8';
 		
@@ -586,3 +594,4 @@ class File extends Omeka_Record {
 }  	 
 
 ?>
+A

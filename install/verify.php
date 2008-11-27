@@ -41,6 +41,13 @@ try {
             'msg'=>'The mysqli PHP extension is required for Omeka to run.  Please check with your server administrator to enable this extension and then try again.');
     }
     
+    if(!extension_loaded('exif')) {
+        $warning[] = array(
+            'header'=>"'exif' module not loaded",
+            'msg'=>"Without the 'exif' module loaded into PHP, Exif data cannot be automatically extracted from uploaded images."
+        );
+    }
+    
     //Verify that mod_rewrite is enabled (NOT WORK YET)
     $modRewriteUrl = WEB_ROOT.'/checkModRewrite.html';
    
