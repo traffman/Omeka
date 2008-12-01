@@ -594,4 +594,3 @@ class File extends Omeka_Record {
 }  	 
 
 ?>
-A
