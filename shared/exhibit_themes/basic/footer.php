@@ -5,5 +5,7 @@
 </div><!--end content-->
 
 </div><!--end wrap-->
+<!-- Plugin Stuff (Footer) -->
+<?php plugin_footer(); ?>
 </body>
 </html>
